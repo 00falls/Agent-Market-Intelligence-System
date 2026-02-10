@@ -29,11 +29,7 @@
 
 ## 三、系统整体架构（How）
 
-
 ```mermaid
-%% 架构图设计：基于大厂 B 端产品视角
-%% 核心逻辑：用户交互 -> Agent 决策循环 -> 工具执行 -> 结果反馈
-
 graph TD
     %% 定义样式类
     classDef user fill:#FF6B6B,stroke:#333,stroke-width:2px,color:white,font-weight:bold;
@@ -42,31 +38,31 @@ graph TD
     classDef tools fill:#1A535C,stroke:#333,stroke-width:0px,color:white;
     classDef data fill:#F7FFF7,stroke:#333,stroke-dasharray: 5 5;
 
-    %% 1. 用户交互层 (Interaction Layer)
-    subgraph User_Layer [💻 用户交互层 (Streamlit Frontend)]
+    %% 1. 用户交互层 - 修复：标题加双引号
+    subgraph User_Layer ["💻 用户交互层 (Streamlit Frontend)"]
         User((🙍‍♂️ 用户 User))
-        Input[📝 输入: 竞品名称 + 分析维度]
-        Display[🖥️ 界面展示: 实时思考日志 + Markdown 简报]
+        Input["📝 输入: 竞品名称 + 分析维度"]
+        Display["🖥️ 界面展示: 实时思考日志 + Markdown 简报"]
     end
 
-    %% 2. 核心决策层 (Orchestration Layer)
-    subgraph Agent_Layer [🧠 Agent 核心决策层 (LangChain + DeepSeek)]
+    %% 2. 核心决策层 - 修复：标题加双引号
+    subgraph Agent_Layer ["🧠 Agent 核心决策层 (LangChain + DeepSeek)"]
         direction TB
-        Agent{{🤖 ReAct 智能体}}
-        Memory[(思维链 Log)]
-        Prompt[结构化 Prompt]
+        Agent{{"🤖 ReAct 智能体"}}
+        Memory[("思维链 Log")]
+        Prompt["结构化 Prompt"]
         
         %% LLM 交互
-        LLM[⚡ DeepSeek V3 API]
+        LLM["⚡ DeepSeek V3 API"]
     end
 
-    %% 3. 工具执行层 (Execution Layer)
-    subgraph Tool_Layer [🛠️ 工具执行层 (Tools)]
-        Search[🔍 Tavily 联网搜索]
-        Scrape[📄 网页内容抓取 & 清洗]
+    %% 3. 工具执行层 - 修复：标题加双引号
+    subgraph Tool_Layer ["🛠️ 工具执行层 (Tools)"]
+        Search["🔍 Tavily 联网搜索"]
+        Scrape["📄 网页内容抓取 & 清洗"]
     end
 
-    %% 4. 数据源 (External World)
+    %% 4. 数据源
     World((🌐 互联网实时数据))
 
     %% 连线逻辑
@@ -96,7 +92,6 @@ graph TD
     class Agent,LLM,Prompt brain;
     class Search,Scrape tools;
     class World,Memory data;
-
 
 ## 四、核心功能模块（What）
 
