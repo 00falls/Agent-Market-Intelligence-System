@@ -92,6 +92,7 @@ graph TD
     class Agent,LLM,Prompt brain;
     class Search,Scrape tools;
     class World,Memory data;
+```
 
 ## 四、核心功能模块（What）
 
