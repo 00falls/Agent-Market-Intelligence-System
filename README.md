@@ -38,14 +38,14 @@ graph TD
     classDef tools fill:#1A535C,stroke:#333,stroke-width:0px,color:white;
     classDef data fill:#F7FFF7,stroke:#333,stroke-dasharray: 5 5;
 
-    %% 1. 用户交互层 - 修复：标题加双引号
+    %% 1. 用户交互层
     subgraph User_Layer ["💻 用户交互层 (Streamlit Frontend)"]
         User((🙍‍♂️ 用户 User))
         Input["📝 输入: 竞品名称 + 分析维度"]
         Display["🖥️ 界面展示: 实时思考日志 + Markdown 简报"]
     end
 
-    %% 2. 核心决策层 - 修复：标题加双引号
+    %% 2. 核心决策层
     subgraph Agent_Layer ["🧠 Agent 核心决策层 (LangChain + DeepSeek)"]
         direction TB
         Agent{{"🤖 ReAct 智能体"}}
@@ -56,7 +56,7 @@ graph TD
         LLM["⚡ DeepSeek V3 API"]
     end
 
-    %% 3. 工具执行层 - 修复：标题加双引号
+    %% 3. 工具执行层
     subgraph Tool_Layer ["🛠️ 工具执行层 (Tools)"]
         Search["🔍 Tavily 联网搜索"]
         Scrape["📄 网页内容抓取 & 清洗"]
