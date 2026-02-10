@@ -28,6 +28,8 @@
 ---
 
 ## 三、系统整体架构（How）
+
+```mermaid
 %% 架构图设计：基于大厂 B 端产品视角
 %% 核心逻辑：用户交互 -> Agent 决策循环 -> 工具执行 -> 结果反馈
 
@@ -94,7 +96,6 @@ graph TD
     class Search,Scrape tools;
     class World,Memory data;
 
----
 
 ## 四、核心功能模块（What）
 
